@@ -1,0 +1,17 @@
+Name Country Age Active Instrument NetWorth
+Robin_Pecknold USA 35 T vocals 1500000
+Ryan_Ross USA 35 F guitar 3000000
+Doja_Cat USA 26 T vocals 8000000
+Juanes Colombia 49 T vocals 20000000
+Sufjan_Stevens USA 46 T vocals 4000000
+Sean_Caskey Australia 31 T vocals 52000
+Lil_Uzi_Vert USA 26 T vocals 27000000
+Pierre_Bourne USA 28 T production 1500000
+Kahouly_Nicolay_Sereba Norway 29 T vocals 1500000
+Layne_Staley USA 34* F vocals 10000000
+Tony_Rombola USA 57 T guitar 1500000
+T_Pain USA 36 F vocals 35000000
+Billie_Joe_Armstrong USA 50 T guitar 75000000
+Elvis_Presley USA 42* F guitar 20000000
+Billy_Joel USA 72 T piano 225000000
+John_Lennon England 40* F guitar/piano 200000000
