@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Artist {
+	//THE MAIN CODE FOR THE PROGRAM. CONSTRUCTOR NAMED MUSICIAN.
 	static String name, country;
 	static int age, netWorth;
 	public static boolean active, deceased = false;
