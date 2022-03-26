@@ -5,11 +5,9 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Artist {
-	//THE MAIN CODE FOR THE PROGRAM. CONSTRUCTOR NAMED MUSICIAN.
 	static String name, country;
 	static int age, netWorth;
 	public static boolean active, deceased = false;
-	static Scanner scan = new Scanner(System.in);
 	
 	public static String removeNameUnderscores(String name) {
 		String nameArray[];
@@ -32,9 +30,9 @@ public class Artist {
 	}
 	
 	public static void inputMusician() {
+		Scanner scan = new Scanner(System.in);
 		String musicianInfo = "";
-		try {
-			FileWriter fw = new FileWriter("Musicians.txt", true);
+		try (FileWriter fw = new FileWriter("Musicians.txt", true)) {
 			System.out.println("Enter musician name (put underscores between each section of name): ");
 			musicianInfo += scan.next();
 			System.out.println("Enter musician nationality: ");
@@ -57,10 +55,10 @@ public class Artist {
 			}
 			System.out.println("Enter musician net worth: ");
 			musicianInfo += " " + scan.next();
-			System.out.println(musicianInfo);
-			fw.append("\n" + musicianInfo);
+			fw.append("\n" + musicianInfo); 
 			fw.close();
-		} catch (Exception e){
+			scan.close();
+;		} catch (Exception e){
 			System.out.println("File not found");
 		}
 	}
