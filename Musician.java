@@ -1,4 +1,3 @@
-
 public class Musician extends Artist {
 
 	String[] instruments = {"" , ""};
@@ -6,7 +5,6 @@ public class Musician extends Artist {
 	
 	public Musician(String[] sc) {
 		name = removeNameUnderscores(sc[0]);
-		//name = name.trim();
 		country = sc[1];
 		age = Integer.valueOf(removeAgeAsterisk(sc[2]));
 		if (sc[3].equals("T")) {
@@ -19,8 +17,6 @@ public class Musician extends Artist {
 		}
 		instruments = sc[4].split("/");
 		instrument1 = instruments[0];
-		//instrument1 = instrument1.trim();
-		//instrument2 = instrument2.trim();
 		netWorth = Integer.valueOf(sc[5]);
 		//System.out.println(name + " " + country + " " + age + " " + active + " " + instrument1 + " " + instrument2 + " " + netWorth);
 	}
