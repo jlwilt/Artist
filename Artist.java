@@ -32,33 +32,42 @@ public class Artist {
 	public static void inputMusician() {
 		Scanner scan = new Scanner(System.in);
 		String musicianInfo = "";
+		String musicianName[];
 		try (FileWriter fw = new FileWriter("Musicians.txt", true)) {
 			System.out.println("Enter musician name (put underscores between each section of name): ");
-			musicianInfo += scan.next();
+			musicianName = scan.nextLine().split(" ");
+			for (int i = 0; i < musicianName.length - 1; i++) {
+				musicianName[i] += "_";
+				musicianInfo += musicianName[i];
+				if (i == 1) {
+					musicianInfo += musicianName[i+1];
+				}
+			}
 			System.out.println("Enter musician nationality: ");
-			musicianInfo += " " + scan.next();
+			musicianInfo += " " + scan.nextLine();
 			System.out.println("Enter musician age: ");
-			musicianInfo += " " + scan.next();
+			musicianInfo += " " + scan.nextLine();
 			System.out.println("Is the musician deceased (yes/no)?");
-			if (scan.next().equals("yes")) {
+			if (scan.nextLine().equals("yes")) {
 				musicianInfo += "*";
 			} else {
 				System.out.println("Enter whether musician active (T/F): ");
-				musicianInfo += " " + scan.next();
+				musicianInfo += " " + scan.nextLine();
 			}
 			System.out.println("Enter musician instrument or vocals: ");
-			musicianInfo += " " + scan.next();
+			musicianInfo += " " + scan.nextLine();
 			System.out.println("Enter whether musician plays an addtional instrument (yes/no): ");
-			if (scan.next().equals("yes")) {
+			if (scan.nextLine().equals("yes")) {
 				System.out.println("Enter second instrument: ");
-				musicianInfo += " " + scan.next();
+				musicianInfo += "/" + scan.nextLine();
 			}
 			System.out.println("Enter musician net worth: ");
-			musicianInfo += " " + scan.next();
-			fw.append("\n" + musicianInfo); 
+			musicianInfo += " " + scan.nextLine();
+			fw.append("\n" + musicianInfo);
+			System.out.println("Musician successfully entered into file.");
 			fw.close();
 			scan.close();
-;		} catch (Exception e){
+;		} catch (IOException e){
 			System.out.println("File not found");
 		}
 	}
