@@ -36,12 +36,14 @@ public class Artist {
 		try (FileWriter fw = new FileWriter("Musicians.txt", true)) {
 			System.out.println("Enter musician name: ");
 			musicianName = scan.nextLine().split(" ");
-			for (int i = 0; i < musicianName.length - 1; i++) {
+			System.out.println(musicianName.length);
+			for (int i = 0; i <= musicianName.length-1; i++) {
 				musicianName[i] += "_";
-				musicianInfo += musicianName[i];
-				if (i == 1) {
-					musicianInfo += musicianName[i+1];
+				if (i == musicianName.length-1) {
+					musicianName[i].replace('_', ' ');
 				}
+				musicianInfo += musicianName[i];
+
 			}
 			System.out.println("Enter musician nationality: ");
 			musicianInfo += " " + scan.nextLine();
@@ -67,7 +69,7 @@ public class Artist {
 			System.out.println("Musician successfully entered into file.");
 			fw.close();
 			scan.close();
-;		} catch (Exception e){
+;		} catch (IOException e){
 			System.out.println("File not found");
 		}
 	}
