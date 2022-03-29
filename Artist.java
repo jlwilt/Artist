@@ -34,7 +34,7 @@ public class Artist {
 		String musicianInfo = "";
 		String musicianName[];
 		try (FileWriter fw = new FileWriter("Musicians.txt", true)) {
-			System.out.println("Enter musician name (put underscores between each section of name): ");
+			System.out.println("Enter musician name: ");
 			musicianName = scan.nextLine().split(" ");
 			for (int i = 0; i < musicianName.length - 1; i++) {
 				musicianName[i] += "_";
@@ -67,7 +67,7 @@ public class Artist {
 			System.out.println("Musician successfully entered into file.");
 			fw.close();
 			scan.close();
-;		} catch (IOException e){
+;		} catch (Exception e){
 			System.out.println("File not found");
 		}
 	}
