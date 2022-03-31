@@ -37,13 +37,11 @@ public class Artist {
 			System.out.println("Enter musician name: ");
 			musicianName = scan.nextLine().split(" ");
 			System.out.println(musicianName.length);
-			for (int i = 0; i <= musicianName.length-1; i++) {
-				musicianName[i] += "_";
-				if (i == musicianName.length-1) {
-					musicianName[i].replace('_', ' ');
+			for (int i = 0; i < musicianName.length; i++) {
+				if (i != musicianName.length-1) {
+					musicianName[i] += "_";
 				}
 				musicianInfo += musicianName[i];
-
 			}
 			System.out.println("Enter musician nationality: ");
 			musicianInfo += " " + scan.nextLine();
@@ -69,7 +67,7 @@ public class Artist {
 			System.out.println("Musician successfully entered into file.");
 			fw.close();
 			scan.close();
-;		} catch (IOException e){
+		} catch (IOException e){
 			System.out.println("File not found");
 		}
 	}
